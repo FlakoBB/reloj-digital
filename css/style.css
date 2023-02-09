@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Graduate&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reloj {
+    font-family: 'Graduate', cursive;
+    color: rgb(134, 202, 234);
+    text-shadow: 0 0 30px rgba(171, 209, 226, .8);
+    font-size: 10rem;
+}
+
+.sin-cursor {
+    cursor: none;
+}
