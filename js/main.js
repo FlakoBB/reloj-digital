@@ -1,24 +1,58 @@
-function agregaCero(numero) {
-    if(numero < 10) {
-        numero = "0" + numero
+import { hora } from "./reloj.js"
+
+
+const btn_reloj = document.getElementById('btn-reloj')
+const btn_cronometro = document.getElementById('btn-cronometro')
+const btn_temporizador = document.getElementById('btn-temporizador')
+const dp_crono = document.getElementById('crono')
+const dp_reloj = document.getElementById('time')
+const dp_tempo = document.getElementById('tempo')
+
+window.addEventListener('load', hora)
+
+btn_cronometro.addEventListener('click', () => {
+    dp_crono.classList.remove('hide')
+    dp_reloj.classList.add('hide')
+    dp_tempo.classList.add('hide')
+})
+
+btn_temporizador.addEventListener('click', () => {
+    dp_tempo.classList.remove('hide')
+    dp_reloj.classList.add('hide')
+    dp_crono.classList.add('hide')
+})
+
+btn_reloj.addEventListener('click', () => {
+    dp_reloj.classList.remove('hide')
+    dp_crono.classList.add('hide')
+    dp_tempo.classList.add('hide')
+})
+
+document.addEventListener('keydown', event => {
+    let tecla = event.code
+
+    switch(tecla) {
+        case "KeyT":
+            dp_tempo.classList.remove('hide')
+            dp_reloj.classList.add('hide')
+            dp_crono.classList.add('hide')
+            break
+        
+        case "KeyR":
+            dp_reloj.classList.remove('hide')
+            dp_crono.classList.add('hide')
+            dp_tempo.classList.add('hide')
+            break
+        
+        case "KeyC":
+            dp_crono.classList.remove('hide')
+            dp_reloj.classList.add('hide')
+            dp_tempo.classList.add('hide')
+            break
     }
-    
-    return numero
-}
+})
 
-const reloj = document.getElementById("time")
-
-setInterval(() => {
-    const hora_actual = new Date()
-    
-    let horas = hora_actual.getHours()
-    let minutos = hora_actual.getMinutes()
-    let segundos = hora_actual.getSeconds()
-    
-    reloj.innerHTML = `${agregaCero(horas)}:${agregaCero(minutos)}:${agregaCero(segundos)}`
-}, 1000)
-
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", event => {
     if (event.code === "KeyF") {
         var elemento = document.documentElement
         if (elemento.requestFullscreen) {

@@ -10,11 +10,21 @@
 <body>
     <div class="reloj" id="time"></div>
 
+    <div class="reloj hide" id="crono">00:00:00
+        <div class="btns-crono">
+            <button id="iniciar-crono">Iniciar</button>
+            <button id="detener-crono">Detener</button>
+            <button id="reiniciar-crono">Reiniciar</button>
+        </div>
+    </div>
+
+    <div class="reloj hide" id="tempo">00:00:00</div>
+
     <div class="menu">
-        <button><img src="./assets/images/reloj-de-pared.png" alt="reloj-de-pared"></button>
-        <button><img src="./assets/images/cronometro.png" alt="Cronometro"></button>
-        <button><img src="./assets/images/reloj-de-arena.png" alt="reloj-de-arena"></button>
+        <button id="btn-reloj"><img src="./assets/images/reloj-de-pared.png" alt="reloj-de-pared"></button>
+        <button id="btn-cronometro"><img src="./assets/images/cronometro.png" alt="Cronometro"></button>
+        <button id="btn-temporizador"><img src="./assets/images/reloj-de-arena.png" alt="reloj-de-arena"></button>
     </div>
 </body>
-<script src="./js/main.js"></script>
+<script src="./js/main.js" type="module"></script>
 </html>
