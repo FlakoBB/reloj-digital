@@ -1,4 +1,6 @@
-import { hora } from "./reloj.js"
+import { MiReloj } from "./reloj.js"
+
+const reloj = new MiReloj()
 
 const btn_reloj = document.getElementById('btn-reloj')
 const btn_cronometro = document.getElementById('btn-cronometro')
@@ -7,7 +9,7 @@ const dp_crono = document.getElementById('crono')
 const dp_reloj = document.getElementById('time')
 const dp_tempo = document.getElementById('tempo')
 
-window.addEventListener('load', hora)
+window.addEventListener('load', reloj.hora())
 
 btn_cronometro.addEventListener('click', () => {
     dp_crono.classList.remove('hide')

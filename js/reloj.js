@@ -1,21 +1,25 @@
-function agregaCero(numero) {
-    if(numero < 10) {
-        numero = "0" + numero
+export class MiReloj {
+    constructor() {
+        this.reloj = document.getElementById("time")
+    }
+
+    agregaCero(numero) {
+        if(numero < 10) {
+            numero = "0" + numero
+        }
+        
+        return numero
     }
     
-    return numero
-}
-
-const reloj = document.getElementById("time")
-
-export function hora() {
-    setInterval(() => {
-    const hora_actual = new Date()
-    
-    let horas = hora_actual.getHours()
-    let minutos = hora_actual.getMinutes()
-    let segundos = hora_actual.getSeconds()
-    
-    reloj.innerHTML = `${agregaCero(horas)}:${agregaCero(minutos)}:${agregaCero(segundos)}`
-}, 1000)
+    hora() {
+        setInterval(() => {
+            const hora_actual = new Date()
+            
+            let horas = hora_actual.getHours()
+            let minutos = hora_actual.getMinutes()
+            let segundos = hora_actual.getSeconds()
+            
+            this.reloj.innerHTML = `${this.agregaCero(horas)}:${this.agregaCero(minutos)}:${this.agregaCero(segundos)}`
+        }, 1000)
+    }
 }
