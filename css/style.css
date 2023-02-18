@@ -14,11 +14,16 @@ body {
     justify-content: center;
 }
 
-.reloj {
+.display {
     font-family: 'Graduate', cursive;
     color: rgb(134, 202, 234);
     text-shadow: 0 0 30px rgba(171, 209, 226, .8);
     font-size: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
 }
 
 .sin-cursor {
@@ -38,6 +43,8 @@ body {
 
 .menu button {
     background: none;
+    border: none;
+    outline: none;
     border-radius: 50%;
     width: 5rem;
     height: 5rem;
@@ -60,16 +67,31 @@ body {
     width: 100%;
 }
 
-#crono {
-    color: rgb(234, 134, 134);
-    text-shadow: 0 0 30px rgba(226, 171, 171, 0.8);
-}
-
-#tempo {
-    color: rgb(157, 234, 134);
-    text-shadow: 0 0 30px rgba(187, 226, 171, 0.8);
-}
-
 .hide {
     display: none;
+}
+
+#crono .btns-crono {
+    font-size: 2rem;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btns-crono button {
+    width: 6em;
+    padding: .3em;
+    border-radius: .8em;
+    font-size: .5em;
+    border: 1px solid #86caea;
+    background: none;
+    color: #86caea;
+    cursor: pointer;
+}
+
+.btns-crono button:hover {
+    background-color: #86caea;
+    box-shadow: 0 0 30px rgba(171, 209, 226, .8);
+    color: white;
 }

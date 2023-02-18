@@ -1,6 +1,5 @@
 import { hora } from "./reloj.js"
 
-
 const btn_reloj = document.getElementById('btn-reloj')
 const btn_cronometro = document.getElementById('btn-cronometro')
 const btn_temporizador = document.getElementById('btn-temporizador')
