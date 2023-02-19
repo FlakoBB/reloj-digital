@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="./assets/images/icon_reloj.png">
     <title>Reloj Digital</title>
 </head>
 <body>
@@ -19,12 +20,18 @@
         </div>
     </div>
 
-    <div class="display hide" id="tempo">00:00:00</div>
+    <div class="display hide" id="tempo">
+        <span id="dis-tempo">00:00:00</span>
+        <div class="btns-tempo">
+            <button class="iniciar-tempo">Iniciar</button>
+            <button class="borrar-tempo">Borrar</button>
+        </div>
+    </div>
 
     <div class="menu">
-        <button id="btn-reloj"><img src="./assets/images/reloj-de-pared.png" alt="reloj-de-pared"></button>
-        <button id="btn-cronometro"><img src="./assets/images/cronometro.png" alt="Cronometro"></button>
-        <button id="btn-temporizador"><img src="./assets/images/reloj-de-arena.png" alt="reloj-de-arena"></button>
+        <button id="btn-reloj"><img src="./assets/images/reloj-de-pared.png" alt="reloj-de-pared"><span class="tooltip">Reloj</span></button>
+        <button id="btn-cronometro"><img src="./assets/images/cronometro.png" alt="Cronometro"><span class="tooltip">Cronometro</span></button>
+        <button id="btn-temporizador"><img src="./assets/images/reloj-de-arena.png" alt="reloj-de-arena"><span class="tooltip">Temporizador</span></button>
     </div>
 </body>
 <script src="./js/main.js" type="module"></script>
