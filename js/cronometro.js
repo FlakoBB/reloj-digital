@@ -20,11 +20,12 @@ export class Cronos {
         clearInterval(this.intervalo)
     }
 
-    detenerCrono() {
+    reiniciarCrono() {
         if(this.inicio) {
             clearInterval(this.intervalo)
             this.inicio = null
             this.intervalo = null
+            this.dis_crono.textContent = '00:00:00:000'
         }
     }
 
