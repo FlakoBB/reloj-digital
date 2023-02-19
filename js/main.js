@@ -1,6 +1,8 @@
 import { MiReloj } from "./reloj.js"
+import { Cronos } from "./cronometro.js"
 
 const reloj = new MiReloj()
+const cronoss = new Cronos()
 
 const btn_reloj = document.getElementById('btn-reloj')
 const btn_cronometro = document.getElementById('btn-cronometro')
@@ -9,8 +11,20 @@ const dp_crono = document.getElementById('crono')
 const dp_reloj = document.getElementById('time')
 const dp_tempo = document.getElementById('tempo')
 
-window.addEventListener('load', reloj.hora())
+window.addEventListener('load', reloj.hora()) // iniciar mostrar hora
 
+// Cronometro
+const ini_crono = document.getElementById('iniciar-crono')
+const detener_crono = document.getElementById('detener-crono')
+const reiniciar_crono = document.getElementById('reiniciar-crono')
+
+ini_crono.addEventListener('click', cronoss.iniciarCrono())
+detener_crono.addEventListener('click', cronoss.pausarCrono())
+reiniciar_crono.addEventListener('click', cronoss.detenerCrono())
+
+
+
+// Controles
 btn_cronometro.addEventListener('click', () => {
     dp_crono.classList.remove('hide')
     dp_reloj.classList.add('hide')

@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
 body {
@@ -37,8 +38,7 @@ body {
     bottom: 4rem;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    
+    justify-content: space-evenly;    
 }
 
 .menu button {
