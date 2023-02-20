@@ -45,6 +45,7 @@ const iniciar_tempo = document.getElementById('iniciar-tempo')
 const borrar_tempo = document.getElementById('borrar-tempo')
 
 iniciar_tempo.addEventListener('click', () => { tempor.iniciarTempo() })
+borrar_tempo.addEventListener('click', () => { tempor.borrarTempo() })
 
 
 

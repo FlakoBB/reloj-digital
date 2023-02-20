@@ -8,7 +8,9 @@ export class Tempor {
         this.numeros = this.texto_actual.replace(/:/g, '')
         this.arreglo_nums = [...this.numeros]
         this.contador = 0
-        this.timer = ''
+        this.timer = '00:00:00'
+        this.intervalo = null
+        this.alarma = new Audio('../assets/audios/alarma.mp3')
     }
 
     agregaCero(numero) {
@@ -48,7 +50,7 @@ export class Tempor {
     }
 
     iniciarTempo() {
-        if(this.timer !== '00:00:00') {
+        if(this.timer !== '00:00:00' && !this.intervalo) {
             let arreglo_timer = this.timer.split(':')
             this.horas = parseInt(arreglo_timer[0])
             this.minutos = parseInt(arreglo_timer[1])
@@ -66,7 +68,7 @@ export class Tempor {
                 this.horas += nuevas_horas
             }
 
-            setInterval(() => {
+            this.intervalo = setInterval(() => {
                 if(this.minutos === 0 && this.horas > 0) {
                     this.horas--
                     this.minutos = 60
@@ -76,12 +78,41 @@ export class Tempor {
                     this.segundos = 60
                 }
                 this.segundos--
+
+                if(this.segundos === 0 && this.minutos === 0 && this.horas === 0) {
+                    document.body.classList.add("bg-alarma")
+                    this.alarma.loop = true
+                    this.alarma.play()
+                    clearInterval(this.intervalo)
+                    this.horas = 0
+                    this.minutos = 0
+                    this.segundos = 0
+                    this.contador = 0
+                    this.timer = '00:00:00'
+                    this.intervalo = null
+                    this.dis_tempo.textContent = this.timer
+                    this.numeros = this.timer.replace(/:/g, '')
+                    this.arreglo_nums = [...this.numeros]
+                }
                 this.dis_tempo.textContent = `${this.agregaCero(this.horas)}:${this.agregaCero(this.minutos)}:${this.agregaCero(this.segundos)}`
             }, 1000)
 
-        } else {
-            console.log(this.timer)
-            alert("aun no")
         }
+    }
+
+    borrarTempo() {
+        document.body.classList.remove("bg-alarma")
+        this.alarma.pause()
+        this.alarma.currentTime = 0
+        clearInterval(this.intervalo)
+        this.horas = 0
+        this.minutos = 0
+        this.segundos = 0
+        this.contador = 0
+        this.timer = '00:00:00'
+        this.intervalo = null
+        this.dis_tempo.textContent = this.timer
+        this.numeros = this.timer.replace(/:/g, '')
+        this.arreglo_nums = [...this.numeros]
     }
 }

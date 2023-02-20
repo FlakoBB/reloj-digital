@@ -135,3 +135,16 @@ body {
     box-shadow: 0 0 30px rgba(171, 209, 226, .8);
     color: white;
 }
+
+.bg-alarma {
+    animation: intermitente 1s infinite alternate;
+}
+
+@keyframes intermitente {
+    0% {
+        background-color: white;
+    }
+    100% {
+        background-color: #c02b2b;
+    }
+}
