@@ -10,7 +10,7 @@ export class Tempor {
         this.contador = 0
         this.timer = '00:00:00'
         this.intervalo = null
-        this.alarma = new Audio('../assets/audios/alarma.mp3')
+        this.alarma = new Audio('./../assets/audios/alarma.mp3')
     }
 
     agregaCero(numero) {
