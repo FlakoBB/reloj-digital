@@ -33,13 +33,18 @@ document.addEventListener('keydown', event => {
             tempor.agregarNumero(num_presionado)
         }
     }
-
+    
     if(num_presionado === 'Backspace') {
         if(!dp_tempo.classList.contains('hide')) {
             tempor.borrarNumero()
         }
     }
 })
+
+const iniciar_tempo = document.getElementById('iniciar-tempo')
+const borrar_tempo = document.getElementById('borrar-tempo')
+
+iniciar_tempo.addEventListener('click', () => { tempor.iniciarTempo() })
 
 
 
@@ -72,21 +77,21 @@ document.addEventListener('keydown', event => {
             dp_crono.classList.add('hide')
             break
             
-        case "KeyR":
-            dp_reloj.classList.remove('hide')
-            dp_crono.classList.add('hide')
-            dp_tempo.classList.add('hide')
-            break
+            case "KeyR":
+                dp_reloj.classList.remove('hide')
+                dp_crono.classList.add('hide')
+                dp_tempo.classList.add('hide')
+                break
                 
-        case "KeyC":
-            dp_crono.classList.remove('hide')
-            dp_reloj.classList.add('hide')
-            dp_tempo.classList.add('hide')
-            break
-        }
-    })
+                case "KeyC":
+                    dp_crono.classList.remove('hide')
+                    dp_reloj.classList.add('hide')
+                    dp_tempo.classList.add('hide')
+                    break
+                }
+            })
 
-document.addEventListener("keydown", event => {
+            document.addEventListener("keydown", event => {
     if (event.code === "KeyF") {
         var elemento = document.documentElement
         if (elemento.requestFullscreen) {
