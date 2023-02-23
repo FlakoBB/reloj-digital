@@ -31,6 +31,8 @@ document.addEventListener('keydown', event => {
     if(num_presionado === '0' || num_presionado === '1' || num_presionado === '2' || num_presionado === '3' || num_presionado === '4' || num_presionado === '5' || num_presionado === '6' || num_presionado === '7' || num_presionado === '8' || num_presionado === '9') {
         if(!dp_tempo.classList.contains('hide')) {
             tempor.agregarNumero(num_presionado)
+            console.log('num: ' + num_presionado)
+            console.log(typeof(num_presionado))
         }
     }
     
@@ -47,6 +49,49 @@ const borrar_tempo = document.getElementById('borrar-tempo')
 iniciar_tempo.addEventListener('click', () => { tempor.iniciarTempo() })
 borrar_tempo.addEventListener('click', () => { tempor.borrarTempo() })
 
+const btn_tecl = document.getElementById('activar-tecl')
+const teclado = document.getElementById('tec-nums')
+
+btn_tecl.addEventListener('click', () => {
+    teclado.classList.toggle('hide')
+    if(!teclado.classList.contains('hide')) {
+        document.body.style.flexDirection = 'column'
+        document.body.style.gap = '3rem'
+        document.getElementById('menu').style.position = 'static'
+    } else {
+        document.body.style.removeProperty('flex-direction')
+        document.body.style.removeProperty('gap')
+        document.getElementById('menu').style.position = 'absolute'
+    }
+})
+
+teclado.addEventListener('click', evento => {
+    let boton = evento.target
+
+    if(boton.matches('#uno')) {
+        tempor.agregarNumero('1')
+    } else if(boton.matches('#dos')){
+        tempor.agregarNumero('2')
+    } else if(boton.matches('#tres')){
+        tempor.agregarNumero('3')
+    } else if(boton.matches('#cuatro')){
+        tempor.agregarNumero('4')
+    } else if(boton.matches('#cinco')){
+        tempor.agregarNumero('5')
+    } else if(boton.matches('#seis')){
+        tempor.agregarNumero('6')
+    } else if(boton.matches('#siete')){
+        tempor.agregarNumero('7')
+    } else if(boton.matches('#ocho')){
+        tempor.agregarNumero('8')
+    } else if(boton.matches('#nueve')){
+        tempor.agregarNumero('9')
+    } else if(boton.matches('#cero')){
+        tempor.agregarNumero('0')
+    } else if(boton.matches('#borra')){
+        tempor.borrarNumero()
+    }
+})
 
 
 // Controles
