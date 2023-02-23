@@ -14,7 +14,6 @@ Al entrar a la pagina, el usuario verá el reloj con la hora actual y tres boton
 
 Tanto el cronometro como el temporizador cuentan con su respectivo grupo de botones con los que se pueden controlar.
 
-Aunque la aplicacion se adapte al tamño de diferentes dispositivos, cuenta con controles usando el teclado; por lo cual, no se recomienda usar en dispositivos diferentes a una PC o Laptop.
 
 
 ### **Programación**
@@ -117,7 +116,7 @@ El temporizador tiene dos botones de control:
      - Cuando el cronometro esta corriendo, lo detendra y reseteará las variables.
      - Cuando el temporizador haya llegado a 0, este boton detendra la alarma y la animacion de alerta que ejecuta el temporizador, ademas reseteará las variables.
 
-Para establecer un temporizador, el usuario debera presionar las teclas numericas de su teclado y verá como se coloca el tiempo en el display del temporizador.
+Para establecer un temporizador, el usuario debera presionar las teclas numericas de su teclado y verá como se coloca el tiempo en el display del temporizador. Tambien existe la posibilidad de activar el teclado numerico en pantalla presionando el botón con la imagen de teclado.
 
 Cuando el usuario presiona un numero, se ejecuta una funcion que guarda la cadena actual del display en un arreglo, a ese arreglo le indicamos que borre el elemento en el indice 0 y al mismo tiempo agregue el numero que presiono el usuario al final del arreglo.
 
@@ -251,8 +250,3 @@ El documento cuenta con controles por teclado que permiten al usuario:
      - Con la tecla 'T' pondra el temporizador.
 
  - Presionando la tecla 'F' la aplicacion usara la pantalla completa.
-
-
- #### **controles por teclado del temporizador**
-
- Como ya se mencionó, para estableser un tiempo en el temporizador, es necesario usar las teclas numericas del teclado; debido a esto, no es posible usar el temporizador desde un telefono movil.
