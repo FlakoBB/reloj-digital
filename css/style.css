@@ -152,7 +152,7 @@ body {
 }
 
 .teclado {
-    width: 10rem;
+    width: 16rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -208,6 +208,10 @@ body {
 
     #activar-tecl {
         width: 1.8rem;
+    }
+
+    .teclado {
+        width: 75%;
     }
 }
 
